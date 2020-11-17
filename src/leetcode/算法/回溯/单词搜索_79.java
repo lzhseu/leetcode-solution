@@ -2,6 +2,9 @@ package leetcode.算法.回溯;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 /**
  * @author lzh
  * @date 2020/10/16 19:50
@@ -62,5 +65,11 @@ public class 单词搜索_79 {
         visited[r][c] = false;
 
         return flag;
+    }
+
+    @Test
+    public void test2() {
+        int[] arr = {5, 1, 8};
+
     }
 }

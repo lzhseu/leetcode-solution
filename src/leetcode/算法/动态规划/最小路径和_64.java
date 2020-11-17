@@ -1,5 +1,7 @@
 package leetcode.算法.动态规划;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 
 /**
@@ -56,4 +58,6 @@ public class 最小路径和_64 {
 
         return dp[cols-1];
     }
+
+
 }
