@@ -4,7 +4,7 @@ package leetcode.数据结构.树;
  * @author lzh
  * @date 2020/9/21 16:40
  */
-public class 二叉树转换累加树_538 {
+public class 把二叉搜索树转换为累加树_538 {
 
     int sum = 0;
 

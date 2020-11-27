@@ -14,6 +14,33 @@ import java.util.List;
 public class 验证二叉搜索树_98 {
 
     /**
+     * 框架式编码
+     * 0ms
+     */
+    public boolean isValidBST(TreeNode root) {
+
+        return isValidBST(root, null, null);
+    }
+
+    private boolean isValidBST(TreeNode root, TreeNode min, TreeNode max) {
+
+        if(root == null) {
+            return true;
+        }
+        // 若 root.val 不符合 max 和 min 的限制，说明不是合法 BST
+        if(min != null && root.val <= min.val) {
+            return false;
+        }
+        if(max != null && root.val >= max.val) {
+            return false;
+        }
+
+        // 限定左子树的最大值是 root.val，右子树的最小值是 root.val
+        return isValidBST(root.left, min, root) && isValidBST(root.right, root, max);
+
+    }
+
+    /**
      * 做法一：中序遍历，然后再遍历一次结果，看先后顺序是否正确
      * 2ms 31.17%    38.3M 77.9%
      */
@@ -131,7 +158,7 @@ public class 验证二叉搜索树_98 {
      * 0ms 100%    38.1M 88.24%
      */
     private long pre = Long.MIN_VALUE;
-    public boolean isValidBST(TreeNode root) {
+    public boolean isValidBST4(TreeNode root) {
 
         return recursive3(root);
     }
