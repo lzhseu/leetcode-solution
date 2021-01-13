@@ -1,5 +1,7 @@
 package leetcode.数据结构.栈;
 
+import org.junit.Test;
+
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -94,5 +96,10 @@ public class 柱状图中最大的矩形_84 {
         }
 
         return max;
+    }
+
+    @Test
+    public void test() {
+        System.out.println(largestRectangleArea2(new int[]{3, 1, 3, 2, 2}));
     }
 }

@@ -2,6 +2,9 @@ package leetcode.算法.双指针;
 
 import org.junit.Test;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * @author lzh
  * @date 2020/10/19 9:38
@@ -205,10 +208,36 @@ public class 接雨水_42 {
 
 
     /**
-     * 栈
+     * 单调栈
+     * 3ms 38.1MB
      */
     public int trap5(int[] height) {
-        return 0;
+        int len = height.length;
+        if(len < 3) {
+            return 0;
+        }
+
+        int result = 0;
+
+        Deque<Integer> stack = new ArrayDeque<>();
+
+        for(int i = 0; i < len; i++) {
+
+            while(!stack.isEmpty() && height[stack.peekLast()] <= height[i]) {
+
+                int top = stack.removeLast();
+                if(!stack.isEmpty()) {
+                    int h = Math.min(height[i], height[stack.peekLast()]) - height[top];
+                    int w = i - stack.peekLast() - 1;
+                    result += h * w;
+                }
+            }
+
+            stack.addLast(i);
+        }
+
+        return result;
+
     }
 
 
