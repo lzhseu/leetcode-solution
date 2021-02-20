@@ -78,8 +78,10 @@ public class QuickSort {
 
     @Test
     public void test() {
-        //nteger[] a = {1,3,100,58,34,2,15,46,27,6,6,32};
-        Integer[] a = {100,2,3,4,5,6,15,46,27,6,6,32};
+        //Integer[] a = {1,3,100,58,34,2,15,46,27,6,6,32};
+        //Integer[] a = {100,2,3,4,5,6,15,46,27,6,6,32};
+        Integer[] a = {3, 2, 3};
+
         sort(a);
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + " ");

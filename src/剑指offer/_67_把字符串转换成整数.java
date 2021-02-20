@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author lzh
  * @date 2020/7/11 21:30
  */
-public class 把字符串转换成整数_67 {
+public class _67_把字符串转换成整数 {
 
     /**
      * 思路非常简单，就一次遍历然后判断各种情况即可
